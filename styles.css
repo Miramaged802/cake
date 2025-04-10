@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.countdown-container {
+  display: block !important;
+  width: 100%;
+}
+
+.celebration-container {
+  display: none;
+  width: 100%;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: glow 2s infinite;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.time-block {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  min-width: 150px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.time-block:hover {
+  transform: translateY(-10px);
+}
+
+.time-block span {
+  display: block;
+}
+
+.time-block span:first-child {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ff6b6b;
+  text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+.time-block .label {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+.remaining {
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 2rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.heart {
+  color: #ff6b6b;
+  animation: heartbeat 1s infinite;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#countdown {
+  display: block;
+}
+
+#birthday-celebration {
+  display: none;
+  animation: fadeIn 1s ease-in;
+}
+.celebration-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.celebration-message {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+
+/* الكعكة المحسنة مع الحفاظ على بقية العناصر كما هي */
+/* تصميم الكعكة */
+.cake-container {
+  position: relative;
+  top: 50px;
+  margin: 40px auto;
+  perspective: 1000px;
+}
+
+.cake {
+  position: relative;
+  width: 500px;
+  height: 250px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+}
+
+/* طبقات الكعكة */
+.cake-top {
+  position: absolute;
+  width: 80%;
+  height: 50px;
+  background: #fbc2eb;
+  border-radius: 40% 40% 10px 10px;
+  top: -19px;
+  left: 10%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cake-middle {
+  position: absolute;
+  width: 90%;
+  height: 60px;
+  background: #fad0c4;
+  border-radius: 10px;
+  top: 30px;
+  left: 5%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cake-bottom {
+
+ top: 90px;
+    position: absolute;
+  width: 100%;
+  height: 70px;
+  background: #ff9a9e;
+  
+ border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* التزيين */
+.icing {
+  position: absolute;
+  width: 80%;
+  height: 20px;
+  background: #fff;
+  border-radius: 50% 50% 0 0;
+  top: -19px;
+  left: 10%;
+  z-index: 2;
+}
+
+.drip {
+  position: absolute;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+}
+
+.drip1 {
+  width: 15px;
+  height: 25px;
+  left: 20%;
+ 
+}
+
+.drip2 {
+  width: 20px;
+  height: 30px;
+  left: 50%;
+  
+}
+
+.drip3 {
+  width: 12px;
+  height: 20px;
+  left: 75%;
+  
+}
+
+/* الشموع */
+.candles {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 5;
+}
+
+.candle {
+  width: 10px;
+  height: 50px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+}
+
+.thread {
+  position: absolute;
+  width: 2px;
+  height: 5px;
+  background: #333;
+  top: -5px;
+  left: 4px;
+}
+
+.flame {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff6b6b;
+  border-radius: 50%;
+  top: -10px;
+  left: -5px;
+  animation: flicker 1s infinite;
+  box-shadow: 0 0 20px #ff6b6b;
+}
+
+/* حبات السكر */
+.sprinkle {
+  position: absolute;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  z-index: 3;
+}
+
+/* توزيع حبات السكر على الطبقة الأولى فقط */
+.s1 {
+  background: #ff6b6b;
+  top: 5%;
+  left: 10%;
+}
+
+.s2 {
+  background: #a18cd1;
+  top: 2%;
+  left: 25%;
+}
+
+.s3 {
+  background: #aa2547;
+  top: 8%;
+  left: 40%;
+}
+
+.s4 {
+  background: #ffec00;
+  top: 1%;
+  left: 55%;
+}
+
+.s5 {
+  background: #00d9ff;
+  top: 6%;
+  left: 70%;
+}
+
+.s6 {
+  background: #ff9a00;
+  left: 85%;
+}
+
+/* حركات الكعكة */
+@keyframes cakeBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    transform: scale(1) rotate(-2deg);
+    height: 24px;
+  }
+  50% {
+    transform: scale(1.1) rotate(2deg);
+    height: 28px;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.frosting {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, #ffd6e0 0%, #ffb6c1 100%);
+  border-radius: 50% 50% 0 0;
+  top: 0;
+  box-shadow: 0 0 20px rgba(255, 214, 224, 0.5);
+  z-index: 4;
+}
+
+.cake-layer {
+  position: absolute;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cake-layer.middle {
+  background: linear-gradient(to bottom, #fad0c4 0%, #ffd1ff 100%);
+  height: 70px;
+  top: 40px;
+  left: 5%;
+  z-index: 3;
+}
+
+.cake-layer.bottom {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(to bottom, #ffd1ff 0%, #a18cd1 100%);
+  border-radius: 10px;
+  top: 100px;
+  z-index: 2;
+}
+
+.cake-layer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: repeating-linear-gradient(
+    to right,
+    #ff6b6b,
+    #ff6b6b 10px,
+    #ff8e8e 10px,
+    #ff8e8e 20px
+  );
+  bottom: -10px;
+  border-radius: 10px;
+}
